@@ -9,21 +9,22 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, esp32-toolchain }: {
-    overlay = import ./overlay.nix;
+    overlay = final: prev: {
+      gcc-xtensa-esp32-elf-bin = esp32-toolchain.defaultPackage.${prev.system};
+      openocd-esp32-bin = prev.callPackage ./pkgs/openocd-esp32-bin.nix { };
+      esp-idf-src = prev.callPackage ./pkgs/esp-idf-src { };
+    };
   } // flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
     let
       pkgs = import nixpkgs { 
         inherit system; 
         overlays = [ 
           self.overlay 
-          (final: prev: {
-            gcc-xtensa-esp32-elf-bin = esp32-toolchain.defaultPackage.${system};
-          })
         ]; 
       };
     in
     {
-      packages = builtins.trace esp32-toolchain.defaultPackage.${system} {
+      packages = {
         inherit (pkgs)
           gcc-xtensa-esp32-elf-bin
           openocd-esp32-bin

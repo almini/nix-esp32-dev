@@ -22,8 +22,5 @@ There are default versions of ESP-IDF and the ESP32 toolchain versions specified
 
 See `example/flake.nix` for an example.
 
-## Overlay
-This repo contains an overlay in `overlay.nix` containing all the packages defined by this repo. If you clone the repo into `~/.config/nixpkgs/overlays/`, nixpkgs will automatically pick up the overlay and effectively add the packages to your system nixpkgs.
-
 ## Credits
 - [mirrexagon/nixpkgs-esp-dev](https://github.com/mirrexagon/nixpkgs-esp-dev)
