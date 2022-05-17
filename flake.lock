@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652741534,
-        "narHash": "sha256-MhXS6pIotly/fj97LguVt//dW0HmQQCq4Om3kGJCXgs=",
+        "lastModified": 1652747774,
+        "narHash": "sha256-KvhCsJiqGA7Qnj1FIzhYCozgeHp34FeUQK+hseco8c4=",
         "owner": "almini",
         "repo": "nix-esp32-toolchain",
-        "rev": "abbe3c1a68e4c5238d718226bd932b23fb2cee40",
+        "rev": "cede083b488f6d1cd01cc062cb727db2258ae599",
         "type": "github"
       },
       "original": {
